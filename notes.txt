@@ -1,0 +1,54 @@
+    ////////////// THINGS I TRIED TO MAKE IMAGES DISPLAY ///////////////////    
+    
+    // const onDrop = async (pic) => {
+    //     setPicture(pic);
+    //     console.log(pic);
+    //     let blob = await fetch(pic).then(r => r.blob());  
+    //     console.log(blob);
+    // }
+
+
+    // const onDrop = async (e) => {
+    //     var reader = new FileReader();
+    //     reader.readAsBinaryString(e.target.files[0]);
+    //     reader.onload = function () {
+    //         console.log(reader.result);
+    //         // setPicture(`${reader.result}`)
+    //     };
+    //     reader.onerror = function (error) {
+    //         console.log('Error: ', error);
+    //     };        
+    // }
+
+    // const onDrop = async (e) => {
+    //     let blob = await fetch(e.target.files[0]).then(r => r.blob());
+    //     console.log(blob);
+        
+    //     await setPicture(URL.createObjectURL(blob));
+    //     console.log(picture);
+        
+    // }
+
+
+    // await setPicture(URL.createObjectURL(e.target.files[0]))
+    // console.log(e.target.files[0]);
+    // console.log(picture);
+    // console.log("1");
+    // let blob = await fetch(picture!).then(r => r.blob());
+    // console.log(blob);
+    // let myImage;
+    // await setPicture(URL.createObjectURL(blob));
+    // console.log(myImage);
+    // console.log("2");
+
+
+    // const onDrop = async (e) => {
+    //     // await setPicture(URL.createObjectURL(e.target.files[0]))
+    //     // setPicture(await imageConversion.urltoImage(e.target.files[0]));
+    //     let canvas;
+    //     canvas = await imageConversion.imagetoCanvas(e.target.files[0], {width: 300, height: 200}).then(res => console.log(res));
+    //     let blob; 
+    //     blob = await imageConversion.canvastoFile(canvas).then(res => console.log(res));
+    //     let dataURL;
+    //     dataURL = await imageConversion.filetoDataURL(blob).then(res => console.log(res));        
+    // }
