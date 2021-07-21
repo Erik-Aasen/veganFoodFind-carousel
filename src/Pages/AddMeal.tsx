@@ -42,11 +42,11 @@ export default function AddMeal() {
             setPicture(newJpeg)
         } else if (orientation === 1) {
             setOrientation(8)
-            var zeroth = {};
+            zeroth = {};
             zeroth[piexif.ImageIFD.Orientation] = 8;
-            var exifObj = { "0th": zeroth }
-            var exifbytes = piexif.dump(exifObj);
-            var newJpeg = piexif.insert(exifbytes, picture)
+            exifObj = { "0th": zeroth }
+            exifbytes = piexif.dump(exifObj);
+            newJpeg = piexif.insert(exifbytes, picture)
             setPicture(newJpeg)
         }
     }
@@ -63,11 +63,11 @@ export default function AddMeal() {
             setPicture(newJpeg)
         } else if (orientation === 8) {
             setOrientation(1)
-            var zeroth = {};
+            zeroth = {};
             zeroth[piexif.ImageIFD.Orientation] = 1;
-            var exifObj = { "0th": zeroth }
-            var exifbytes = piexif.dump(exifObj);
-            var newJpeg = piexif.insert(exifbytes, picture)
+            exifObj = { "0th": zeroth }
+            exifbytes = piexif.dump(exifObj);
+            newJpeg = piexif.insert(exifbytes, picture)
             setPicture(newJpeg)
         }
     }
