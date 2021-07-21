@@ -6,35 +6,9 @@ export default function HomePageSearch(props) {
     const [city, setCity] = useState("All cities")
     const [meal, setMeal] = useState("All meals")
 
-    const [meals, setMeals] = useState<any>("")
-    const [cities, setCities] = useState<any>("")
-
-    const [data, setData] = useState<any>("")
-
-    const filterMeals = (useEffectData) => {
-        let unfilteredMeals = useEffectData.map((item: any) => item.meal)
-        return ([...new Set(unfilteredMeals)])
-    }
-
-    const filterCities = (useEffectData) => {
-        let unfilteredCities = useEffectData.map((item: any) => item.city)
-        return ([...new Set(unfilteredCities)])
-    }
-
-    useEffect(() => {
-
-        async function getMeals() {
-            await Axios.get("http://localhost:4000/getmeals", {
-                withCredentials: true
-            }).then((res: AxiosResponse) => {
-                setData(res.data)
-                setMeals(filterMeals(res.data))
-                setCities(filterCities(res.data))
-            })
-        }
-
-        getMeals()
-    }, []);
+    const [meals, setMeals] = useState<any>(props.meals)
+    const [cities, setCities] = useState<any>(props.cities)
+    const [data, setData] = useState<any>(props.data)
 
     if (!data || !meals || !cities) {
         return null;
@@ -47,12 +21,12 @@ export default function HomePageSearch(props) {
         // console.log(cityForFiltering); // returns value
 
         if (cityForFiltering === "All cities") {
-            setMeals(filterMeals(data))
+            setMeals(props.filterMeals(data))
         } else {
             let updatedMeals = data.filter(item => {
                 return (item.city === cityForFiltering)
             })
-            setMeals(filterMeals(updatedMeals))
+            setMeals(props.filterMeals(updatedMeals))
         }
     }
 
