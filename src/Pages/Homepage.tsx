@@ -13,15 +13,26 @@ export default function Homepage() {
     const [meals, setMeals] = useState<any>("")
     const [cities, setCities] = useState<any>("")
     const [data, setData] = useState<any>("")
+    const [pictures, setPictures] = useState<any>("")
 
     const filterMeals = (useEffectData) => {
         let unfilteredMeals = useEffectData.map((item: any) => item.meal)
         return ([...new Set(unfilteredMeals)])
     }
 
-    const filterCities = (useEffectData) => {
-        let unfilteredCities = useEffectData.map((item: any) => item.city)
-        return ([...new Set(unfilteredCities)])
+    // const filterCities = (useEffectData) => {
+    //     let unfilteredCities = useEffectData.map((item: any) => item.city)
+    //     return ([...new Set(unfilteredCities)])
+    // }
+
+    const filter = (useEffectData) => {
+        const meals = [...new Set(useEffectData.map((item: any) => item.meal))]
+        const cities = [...new Set(useEffectData.map((item: any) => item.city))]
+        const pictures = useEffectData.map((item: any) => item.picture)
+
+        return (
+            { meals, cities, pictures }
+        )
     }
 
     useEffect(() => {
@@ -30,9 +41,18 @@ export default function Homepage() {
             await Axios.get("http://localhost:4000/getmeals", {
                 withCredentials: true
             }).then((res: AxiosResponse) => {
-                setData(res.data)
-                setMeals(filterMeals(res.data))
-                setCities(filterCities(res.data))
+
+                const data = res.data;
+                const {meals, cities, pictures} = filter(data);
+
+                setData(data);
+                setMeals(meals);
+                setCities(cities);
+                setPictures(pictures);
+
+                // const meals = filterMeals(res.data);
+                // const cities = filterCities(res.data);
+                // const pictures = filterPictures(res.data)
             })
         }
 
@@ -67,8 +87,8 @@ export default function Homepage() {
         display = (
             <>
                 {posts.map((post: any) => {
-                    let city, description, meal, restaurant, _id, picture;
-                    ({ city, description, meal, restaurant, _id, picture } = post);
+                    // let city, description, meal, restaurant, _id, picture;
+                    const { city, description, meal, restaurant, _id, picture } = post;
 
                     return (
                         <Meal
@@ -93,13 +113,13 @@ export default function Homepage() {
         <>
             <div className="HomePageSearch">
                 <h2>Search by Meal</h2>
-                <HomePageSearch 
-                meals={meals}
-                cities={cities}
-                data={data}
-                filterMeals={filterMeals}
-                filerCities={filterCities}
-                postMeals={postMeals} />
+                <HomePageSearch
+                    meals={meals}
+                    cities={cities}
+                    data={data}
+                    filterMeals={filterMeals}
+                    // filerCities={filterCities}
+                    postMeals={postMeals} />
             </div>
             <div>
                 {display}

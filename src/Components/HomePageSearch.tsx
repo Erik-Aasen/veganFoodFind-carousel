@@ -1,5 +1,5 @@
-import Axios, { AxiosResponse } from "axios"
-import { useEffect, useState } from "react"
+
+import { useState } from "react"
 
 export default function HomePageSearch(props) {
 
@@ -7,8 +7,7 @@ export default function HomePageSearch(props) {
     const [meal, setMeal] = useState("All meals")
 
     const [meals, setMeals] = useState<any>(props.meals)
-    const [cities, setCities] = useState<any>(props.cities)
-    const [data, setData] = useState<any>(props.data)
+    const {data, cities} = props;
 
     if (!data || !meals || !cities) {
         return null;
