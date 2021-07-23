@@ -15,18 +15,30 @@ export default function HomePageSearch(props) {
 
     const selectCity = (e: any) => {
         setCity(e.target.value);
+        console.log(city);
+        
         let cityForFiltering = e.target.value;
         // console.log(city); // returns null
         // console.log(cityForFiltering); // returns value
 
         if (cityForFiltering === "All cities") {
             setMeals(props.filterMeals(data))
+            console.log(meal);
+            
         } else {
             let updatedMeals = data.filter(item => {
                 return (item.city === cityForFiltering)
             })
             setMeals(props.filterMeals(updatedMeals))
+            console.log(meal);
+            setMeal("All meals")
+            
         }
+    }
+
+    const selectMeal = (e: any) => {
+        setMeal(e.target.value)
+        console.log(meal);
     }
 
     return (
@@ -43,7 +55,7 @@ export default function HomePageSearch(props) {
                     }
                 </select>
                 <br />
-                <select onChange={e => setMeal(e.target.value)}>
+                <select onChange={e => selectMeal(e)}>
                     <option>All meals</option>
                     {
                         meals.map((item: any) => {

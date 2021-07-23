@@ -43,7 +43,7 @@ export default function Homepage() {
             }).then((res: AxiosResponse) => {
 
                 const data = res.data;
-                const {meals, cities, pictures} = filter(data);
+                const { meals, cities, pictures } = filter(data);
 
                 setData(data);
                 setMeals(meals);
@@ -76,7 +76,7 @@ export default function Homepage() {
     if (carouselToggle) {
         display = (
             <>
-                <MealCarousel />
+                <MealCarousel data={data} />
             </>
         )
     } else {
