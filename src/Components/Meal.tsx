@@ -40,13 +40,13 @@ export default function Meal(props) {
     }
 
     return (
-        <div>
+        <div className="container-item">
             {editDelete}
             <h1>{meal}</h1>
             <p>{restaurant}</p>
             <p>{city}</p>
-            <img className='photo' alt='' src={picture} />
             <p>{description}</p>
+            <img className='photo' alt='' src={picture} />
         </div>
     )
 }

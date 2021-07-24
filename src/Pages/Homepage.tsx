@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MealCarousel from '../Components/Carousel'
+// import MealCarousel from '../Components/Carousel'
 import HomePageSearch from '../Components/HomePageSearch'
 import Axios, { AxiosResponse } from 'axios';
 import Meal from '../Components/Meal';
@@ -7,7 +7,6 @@ import Meal from '../Components/Meal';
 
 export default function Homepage() {
 
-    const [carouselToggle, setCarouselToggle] = useState<any>(true)
     const [posts, setPosts] = useState<any>("");
 
     const postMeals = (e, city, meal) => {
@@ -16,30 +15,16 @@ export default function Homepage() {
         }, {
             withCredentials: true
         }).then((res: AxiosResponse) => {
-            setCarouselToggle(false)
-            setPosts(res.data)
+            setPosts(display(res.data))
         })
         e.preventDefault();
     }
 
-    let display;
-
-    if (carouselToggle) {
-        display = (
-            <>
-                <MealCarousel />
-            </>
-        )
-    } else {
-        if (!posts) {
-            return null
-        }
-
-        display = (
+    function display(posts) {
+        return (
             <>
                 {posts.map((post: any) => {
-                    let city, description, meal, restaurant, _id, picture;
-                    ({ city, description, meal, restaurant, _id, picture } = post);
+                    const { city, description, meal, restaurant, _id, picture } = post
 
                     return (
                         <Meal
@@ -62,8 +47,8 @@ export default function Homepage() {
                 <h2>Search by Meal</h2>
                 <HomePageSearch postMeals={postMeals} />
             </div>
-            <div>
-                {display}
+            <div className="container">
+                {posts}
             </div>
         </>
     )
