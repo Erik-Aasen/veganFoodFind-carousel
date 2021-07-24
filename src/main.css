@@ -13,9 +13,9 @@ h2 {
     height: 40px;
     /* margin: 10px 10px; */
     background: green;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
 }
 
 .NavContainer a {
@@ -40,7 +40,7 @@ h2 {
     margin: 5px;
 }
 
-.EnterMeal{
+.EnterMeal {
     margin: 10px 10px;
 }
 
@@ -56,28 +56,31 @@ textarea {
 .photo {
     /* height: 250px; */
     width: 300px;
+    margin-top: 16px;
 }
-
-/* .contain {
-    columns: 3;
-    column-gap: 5px;
-    width: 80%;
-    margin: 2px auto;
-}
-
-.contain img {
-    width: 100%;
-    margin: 0;
-    padding: 5px;
-} */
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+    height: 100vh;
+
 }
 
 .container-item {
-    margin: auto;
+    /* display: flex; */
+    /* margin: auto; */
+    margin-top: 50px;
+    text-align: center;
+    flex-grow: 0;
+    /* do not grow   - initial value: 0 */
+    flex-shrink: 0;
+    /* do not shrink - initial value: 1 */
+    flex-basis: 25%;
+    /* width/height  - initial value: auto */
+}
+
+p {
+    margin-bottom: 0px;
 }
