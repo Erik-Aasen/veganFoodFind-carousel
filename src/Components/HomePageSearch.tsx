@@ -53,6 +53,7 @@ export default function HomePageSearch(props) {
                 return (item.city === cityForFiltering)
             })
             setMeals(filterMeals(updatedMeals))
+            setMeal("All meals")
         }
     }
 
