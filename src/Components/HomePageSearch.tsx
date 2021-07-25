@@ -48,7 +48,7 @@ export default function HomePageSearch(props) {
 
         if (cityForFiltering === "All cities") {
             setMeals(filterMeals(data))
-            setMeal("All meals")
+            // setMeal("All meals")
             
         } else {
             let updatedMeals = data.filter(item => {
