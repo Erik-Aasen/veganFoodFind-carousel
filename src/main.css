@@ -56,10 +56,17 @@ textarea {
     border-radius: 10px;
     /* height: auto; */
     /* width: auto; */
-    
+
     /* max-height: 400px;
     max-width: 400px; */
     margin-top: 16px;
+}
+
+.card-img-top {
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .container {

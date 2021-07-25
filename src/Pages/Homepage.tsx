@@ -48,7 +48,9 @@ export default function Homepage() {
                 <HomePageSearch postMeals={postMeals} />
             </div>
             <div className="container">
-                {posts}
+                <div className="row">
+                    {posts}
+                </div>
             </div>
         </>
     )

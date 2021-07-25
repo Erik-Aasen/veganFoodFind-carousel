@@ -26,7 +26,7 @@ export default function Meal(props) {
                 window.location.reload();
             }
         })
-        
+
     }
 
     let editDelete
@@ -40,13 +40,18 @@ export default function Meal(props) {
     }
 
     return (
-        <div className="container-item">
-            {editDelete}
-            <h1>{meal}</h1>
-            <p>{restaurant}</p>
-            <p>{city}</p>
-            <p>{description}</p>
-            <img className='photo' alt='' src={picture} />
+        <div className="">
+            <div className="card text-center">
+                <div className="card-body">
+                    {editDelete}
+                    <img className='card-img-top' alt='' src={picture} />
+                    <h4 className='card-title'>{meal}</h4>
+                    <p className='card-text'>{restaurant}</p>
+                    <p className='card-text'>{city}</p>
+                    <p className='card-text'>{description}</p>
+                </div>
+            </div>
         </div>
+
     )
 }
