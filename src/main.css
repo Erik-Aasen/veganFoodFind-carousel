@@ -50,12 +50,15 @@ textarea {
 }
 
 .photo {
-    /* height: 250px; */
-    /* width: 300px; */
+    height: 400px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 10px;
     /* height: auto; */
-    max-height: 400px;
     /* width: auto; */
-    max-width: 400px;
+    
+    /* max-height: 400px;
+    max-width: 400px; */
     margin-top: 16px;
 }
 
