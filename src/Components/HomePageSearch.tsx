@@ -42,6 +42,8 @@ export default function HomePageSearch(props) {
 
     const selectCity = (e: any) => {
         setCity(e.target.value);
+        console.log('city: ' + city + ', evt: ' + e.target.value);
+        
         let cityForFiltering = e.target.value;
         // console.log(city); // returns null
         // console.log(cityForFiltering); // returns value
@@ -56,6 +58,8 @@ export default function HomePageSearch(props) {
             })
             setMeals(filterMeals(updatedMeals))
             setMeal("All meals")
+            console.log('meals filtered');
+            
             
         }
     }
@@ -68,7 +72,7 @@ export default function HomePageSearch(props) {
     return (
         <div>
             <form>
-                <select onChange={selectCity}>
+                <select value={city} onChange={selectCity}>
                     <option>All cities</option>
                     {
                         cities.map((item: any) => {
@@ -79,7 +83,7 @@ export default function HomePageSearch(props) {
                     }
                 </select>
                 <br />
-                <select onChange={selectMeal}>
+                <select value={meal} onChange={selectMeal}>
                     <option>All meals</option>
                     {
                         meals.map((item: any) => {
