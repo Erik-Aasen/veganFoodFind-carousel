@@ -49,6 +49,7 @@ export default function HomePageSearch(props) {
         if (cityForFiltering === "All cities") {
             setMeals(filterMeals(data))
             setMeal("All meals")
+            
         } else {
             let updatedMeals = data.filter(item => {
                 return (item.city === cityForFiltering)
@@ -57,6 +58,11 @@ export default function HomePageSearch(props) {
             setMeal("All meals")
             
         }
+    }
+
+    const selectMeal = (e: any) => {
+        setMeal(e.target.value)
+        console.log(e.target.value);
     }
 
     return (
@@ -73,7 +79,7 @@ export default function HomePageSearch(props) {
                     }
                 </select>
                 <br />
-                <select onChange={e => setMeal(e.target.value)}>
+                <select onChange={selectMeal}>
                     <option>All meals</option>
                     {
                         meals.map((item: any) => {
