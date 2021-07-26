@@ -44,7 +44,7 @@ export default function Homepage() {
     return (
         <>
             <div className="HomePageSearch">
-                <h2>Search by Meal</h2>
+                <h2>Find Vegan Meals Nearby</h2>
                 <HomePageSearch postMeals={postMeals} />
             </div>
             <div className="container">

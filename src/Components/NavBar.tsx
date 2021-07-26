@@ -46,7 +46,7 @@ export default function NavBar() {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar className='nav' bg="light" expand="lg">
                 <Navbar.Brand href="/">Vegan Food Finder</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

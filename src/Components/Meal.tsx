@@ -40,12 +40,12 @@ export default function Meal(props) {
     }
 
     return (
-        <div className="">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-3">
             <div className="card text-center">
                 <div className="card-body">
                     {editDelete}
                     <img className='card-img-top' alt='' src={picture} />
-                    <h4 className='card-title'>{meal}</h4>
+                    <h5 className='card-title'>{meal}</h5>
                     <p className='card-text'>{restaurant}</p>
                     <p className='card-text'>{city}</p>
                     <p className='card-text'>{description}</p>
