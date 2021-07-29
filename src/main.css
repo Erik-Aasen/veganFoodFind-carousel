@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.homepageSearch h1 {
+    color: white;
+    font-size: 220%;
+}
+
 .NavContainer {
     /* width: 75vw; */
     height: 40px;
@@ -20,11 +25,16 @@
     font-size: 150%;
 }
 
-.HomePageSearch {
+.homepageSearch {
     text-align: center;
     /* margin-top: 75px; */
-    padding: 75px 30px;
-    background-color: green;
+    padding: 85px 30px;
+    /* background-color: green; */
+    background-image: url("homepage.jpg");
+    /* background-size: 2000px; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+        /* adonyi-gábor */
 }
 
 .SearchInput {
@@ -50,9 +60,9 @@ textarea {
 }
 
 .photo {
-    /* height: 400px;
-    width: 350px;
-    object-fit: cover;
+    /* height: 400px; */
+    width: 500px;
+    /* object-fit: cover;
     border-radius: 10px; */
     /* height: auto; */
     /* width: auto; */
@@ -99,7 +109,7 @@ p {
 }
 
 .nav {
-    padding: 16px;
+    padding: 12px;
 }
 
 .card {
@@ -109,4 +119,13 @@ p {
 
 .card-title {
     margin: 12px 0px;
+}
+
+.form-control {
+    max-width: 1000px;
+    /* position: absolute; */
+}
+
+.form {
+    text-align: center;
 }

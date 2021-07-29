@@ -43,8 +43,8 @@ export default function Homepage() {
 
     return (
         <>
-            <div className="HomePageSearch">
-                <h2>Find Vegan Meals Nearby</h2>
+            <div className="homepageSearch">
+                <h1>Find Vegan Meals Nearby</h1>
                 <HomePageSearch postMeals={postMeals} />
             </div>
             <div className="container">

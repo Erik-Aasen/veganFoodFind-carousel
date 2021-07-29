@@ -43,7 +43,7 @@ export default function HomePageSearch(props) {
     const selectCity = (e: any) => {
         setCity(e.target.value);
         console.log('city: ' + city + ', evt: ' + e.target.value);
-        
+
         let cityForFiltering = e.target.value;
         // console.log(city); // returns null
         // console.log(cityForFiltering); // returns value
@@ -51,7 +51,7 @@ export default function HomePageSearch(props) {
         if (cityForFiltering === "All cities") {
             setMeals(filterMeals(data))
             // setMeal("All meals")
-            
+
         } else {
             let updatedMeals = data.filter(item => {
                 return (item.city === cityForFiltering)
@@ -59,8 +59,8 @@ export default function HomePageSearch(props) {
             setMeals(filterMeals(updatedMeals))
             setMeal("All meals")
             console.log('meals filtered');
-            
-            
+
+
         }
     }
 
@@ -72,30 +72,33 @@ export default function HomePageSearch(props) {
     return (
         <div>
             <form>
-                <select value={city} onChange={selectCity}>
-                    <option>All cities</option>
-                    {
-                        cities.map((item: any) => {
-                            return (
-                                <option key={item} id={item}>{item}</option>
-                            )
-                        })
-                    }
-                </select>
-                <br />
-                <select value={meal} onChange={selectMeal}>
-                    <option>All meals</option>
-                    {
-                        meals.map((item: any) => {
-                            return (
-                                <option key={item} id={item}>{item}</option>
-                            )
-                        })
-                    }
-                </select>
-                <br />
-                <button onClick={e => props.postMeals(e, city, meal)} type="submit">Search</button>
+                <div className="form-group align-items-center">
+                    <select value={city} onChange={selectCity} className="form-control" id="exampleFormControlSelect1">
+                        <option>All cities</option>
+                        {
+                            cities.map((item: any) => {
+                                return (
+                                    <option key={item} id={item}>{item}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </div>
+                <div className="form-group">
+                    <select value={meal} onChange={selectMeal} className="form-control" id="exampleFormControlSelect1">
+                        <option>All meals</option>
+                        {
+                            meals.map((item: any) => {
+                                return (
+                                    <option key={item} id={item}>{item}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </div>
             </form>
+            <button type="button" className="btn btn-success" onClick={e => props.postMeals(e, city, meal)}>Search</button>
         </div>
     )
 }
+
