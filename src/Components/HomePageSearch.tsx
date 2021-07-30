@@ -70,7 +70,7 @@ export default function HomePageSearch(props) {
     }
 
     return (
-        <div>
+        <div className="test">
             <form>
                 <div className="form-group align-items-center">
                     <select value={city} onChange={selectCity} className="form-control" id="exampleFormControlSelect1">
@@ -96,8 +96,9 @@ export default function HomePageSearch(props) {
                         }
                     </select>
                 </div>
+                <button type="button" className="btn btn-success" onClick={e => props.postMeals(e, city, meal)}>Search</button>
             </form>
-            <button type="button" className="btn btn-success" onClick={e => props.postMeals(e, city, meal)}>Search</button>
+            
         </div>
     )
 }

@@ -7,6 +7,8 @@
 .homepageSearch h1 {
     color: white;
     font-size: 240%;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
 }
 
 .NavContainer {
@@ -29,18 +31,21 @@
     text-align: center;
     /* margin-top: 75px; */
     padding: 55px 30px;
-    /* background-color: green; */
-    background-image: url("homepage.jpg");
+    background-color: green;
+    background-image: url("homepage2.jpg");
     /* background-size: 2000px; */
-    background-size: 200% auto;
+    /* background-size: 530% auto; */
     background-repeat: no-repeat;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    background-size: cover;
         /* adonyi-gábor */
 }
 
-.SearchInput {
+/* .SearchInput {
     width: 275px;
     margin: 5px;
-}
+} */
 
 .login {
     margin: 5px;
@@ -54,10 +59,10 @@ textarea {
     min-height: 100px;
 }
 
-.UploadButton {
+/* .UploadButton {
     margin-top: 15px;
     width: 275px;
-}
+} */
 
 .photo {
     /* height: 400px; */
@@ -115,20 +120,14 @@ p {
 .card {
     margin-top: 15px;
     border: none;
-    /* margin: 0 auto; */
     float: none;
-
 }
 
 .card-title {
     margin: 12px 0px;
 }
 
-.form-control {
-    max-width: 1000px;
-    /* position: absolute; */
-}
-
-.form {
-    text-align: center;
+form
+{
+    display: inline-block;
 }
