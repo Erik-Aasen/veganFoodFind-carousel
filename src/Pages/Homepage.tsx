@@ -44,11 +44,11 @@ export default function Homepage() {
     return (
         <>
             <div className="homepageSearch">
-                <h1>Find Vegan Meals Nearby</h1>
+                <h1>Find Vegan Meals Anywhere</h1>
                 <HomePageSearch postMeals={postMeals} />
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-center">
                     {posts}
                 </div>
             </div>

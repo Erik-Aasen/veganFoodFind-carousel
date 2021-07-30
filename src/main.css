@@ -6,7 +6,7 @@
 
 .homepageSearch h1 {
     color: white;
-    font-size: 220%;
+    font-size: 240%;
 }
 
 .NavContainer {
@@ -28,11 +28,11 @@
 .homepageSearch {
     text-align: center;
     /* margin-top: 75px; */
-    padding: 85px 30px;
+    padding: 55px 30px;
     /* background-color: green; */
     background-image: url("homepage.jpg");
     /* background-size: 2000px; */
-    background-size: 100%;
+    background-size: 200% auto;
     background-repeat: no-repeat;
         /* adonyi-gábor */
 }
@@ -115,6 +115,9 @@ p {
 .card {
     margin-top: 15px;
     border: none;
+    /* margin: 0 auto; */
+    float: none;
+
 }
 
 .card-title {
