@@ -33,8 +33,8 @@ export default function Meal(props) {
     if (myMeal) {
         editDelete = (
             <>
-                <Link to={editmeal}>Edit</Link>
-                <Link to="/mymeals" onClick={deleteMeal}>Delete</Link>
+                <Link className='btn btn-primary btn-sm align-left' to={editmeal}>Edit</Link>
+                <Link className='btn btn-danger btn-sm align-right' to="/mymeals" onClick={deleteMeal}>Delete</Link>
             </>
         )
     }
