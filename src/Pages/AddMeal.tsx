@@ -30,7 +30,8 @@ export default function AddMeal() {
     //     };
     // }
 
-    const rotateMinus = () => {
+    const rotateMinus = (e) => {
+        e.preventDefault();
         // console.log(orientation);
         if (orientation > 1) {
             setOrientation(orientation - 1)
@@ -51,8 +52,9 @@ export default function AddMeal() {
         }
     }
 
-    const rotatePlus = () => {
+    const rotatePlus = (e) => {
         // console.log(orientation);
+        e.preventDefault();
         if (orientation < 8) {
             setOrientation(orientation + 1)
             var zeroth = {};
@@ -110,47 +112,48 @@ export default function AddMeal() {
     }
 
     return (
-        <div className='add-meal'>
-            <h3>Enter a Meal</h3>
-            <form>
-                <div className="form-group">
-                    <input className="form-control"
-                        type="text"
-                        placeholder="Restaurant Name"
-                        value={restaurant}
-                        onChange={e => setRestaurant(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <input className="form-control"
-                        type="text"
-                        placeholder="City"
-                        value={city}
-                        onChange={e => setCity(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <input className="form-control"
-                        type="text"
-                        placeholder="Meal Name"
-                        value={meal}
-                        onChange={e => setMeal(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <textarea
-                        className="form-control"
-                        placeholder="Description"
-                        value={description}
-                        onChange={e => setDescription(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="img">Upload Image!</label>
-                    <br />
-                    <input onChange={onDrop} type="file" name="img" id="img"></input>
+        <>
+            <div className='add-meal'>
+                <h3>Enter a Meal</h3>
+                <form>
+                    <div className="form-group">
+                        <input className="form-control"
+                            type="text"
+                            placeholder="Restaurant Name"
+                            value={restaurant}
+                            onChange={e => setRestaurant(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control"
+                            type="text"
+                            placeholder="City"
+                            value={city}
+                            onChange={e => setCity(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control"
+                            type="text"
+                            placeholder="Meal Name"
+                            value={meal}
+                            onChange={e => setMeal(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <textarea
+                            className="form-control"
+                            placeholder="Description"
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="img">Upload Image!</label>
+                        <br />
+                        <input onChange={onDrop} type="file" name="img" id="img"></input>
 
-                    {/* <ImageUploader
+                        {/* <ImageUploader
                         withIcon={true}
                         buttonText='Choose image'
                         onChange={onDrop}
@@ -158,19 +161,20 @@ export default function AddMeal() {
                         maxFileSize={5242880}
                         singleImage={true}
                     /> */}
-                    <br />
-                    <br />
-                    <button onClick={rotateMinus}>Orientation -</button>
-                    <button onClick={rotatePlus}>Orientation +</button>
-                    <br />
-                    <br />
-                    <img className='photo' alt='' src={picture} />
-                    <br />
-                    <button className="UploadButton" type="submit" onClick={submitMeal}>Upload Meal</button>
-                </div>
-
-            </form>
-        </div>
+                        <br />
+                        <br />
+                        <button className='btn btn-secondary' onClick={e => { rotateMinus(e) }}>Orientation -</button>
+                        <button className='btn btn-secondary' onClick={e => { rotatePlus(e) }}>Orientation +</button>
+                        <br />
+                        <br />
+                        <button className="btn btn-success" type="submit" onClick={submitMeal}>Upload Meal</button>
+                        <br />
+                        <img className='photo' alt='' src={picture} />
+                        <br />
+                    </div>
+                </form>
+            </div>
+        </>
     )
 }
 

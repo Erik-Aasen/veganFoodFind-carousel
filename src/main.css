@@ -29,7 +29,7 @@
 
 .homepageSearch {
     text-align: center;
-    padding: 55px 30px;
+    padding: 55px 10px;
     background-color: green;
     background-image: url("homepage2.jpg");
     background-repeat: no-repeat;
@@ -117,10 +117,15 @@ form {
 }
 
 .form-control {
-    width: 250px;
-    margin: auto;
+    width: 300px;
+    /* width: auto; */
+    /* margin: auto; */
 }
 
 #img {
     width: 210px;
+}
+
+.btn-secondary {
+    margin: 0px 10px;
 }
