@@ -32,7 +32,7 @@ export default function EditMeal(props) {
     // }
 
     const rotateMinus = () => {
-        console.log(orientation);
+        // console.log(orientation);
         if (orientation > 1) {
             setOrientation(orientation - 1)
             var zeroth = {};
@@ -53,7 +53,7 @@ export default function EditMeal(props) {
     }
 
     const rotatePlus = () => {
-        console.log(orientation);
+        // console.log(orientation);
         if (orientation < 8) {
             setOrientation(orientation + 1)
             var zeroth = {};

@@ -70,9 +70,9 @@ export default function HomePageSearch(props) {
     }
 
     return (
-        <div className="test">
+        <div>
             <form>
-                <div className="form-group align-items-center">
+                <div className="form-group">
                     <select value={city} onChange={selectCity} className="form-control" id="exampleFormControlSelect1">
                         <option>All cities</option>
                         {

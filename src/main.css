@@ -41,16 +41,16 @@
     margin: 5px;
 }
 
-.EnterMeal {
+/* .EnterMeal {
     margin: 10px 10px;
-}
+} */
 
 textarea {
     min-height: 100px;
 }
 
 .photo {
-    width: 500px;
+    width: 300px;
     margin-top: 16px;
 }
 
@@ -110,4 +110,17 @@ form {
 
 .align-right {
     float: right;
+}
+
+.add-meal {
+    text-align: center;
+}
+
+.form-control {
+    width: 250px;
+    margin: auto;
+}
+
+#img {
+    width: 210px;
 }

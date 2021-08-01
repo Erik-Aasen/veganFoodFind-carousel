@@ -110,37 +110,42 @@ export default function AddMeal() {
     }
 
     return (
-        <>
-            <div className="EnterMeal SearchInput">
-                <h3>Enter a Meal</h3>
-                <input className="SearchInput"
-                    type="text"
-                    placeholder="Restaurant Name"
-                    value={restaurant}
-                    onChange={e => setRestaurant(e.target.value)}
-                />
-                <input className="SearchInput"
-                    type="text"
-                    placeholder="City"
-                    value={city}
-                    onChange={e => setCity(e.target.value)}
-                />
-                <input className="SearchInput"
-                    type="text"
-                    placeholder="Meal Name"
-                    value={meal}
-                    onChange={e => setMeal(e.target.value)}
-                />
-                <br />
-                <textarea
-                    className="SearchInput"
-                    placeholder="Description"
-                    value={description}
-                    onChange={e => setDescription(e.target.value)}
-                />
-                <br />
-                <div className="SearchInput">
-
+        <div className='add-meal'>
+            <h3>Enter a Meal</h3>
+            <form>
+                <div className="form-group">
+                    <input className="form-control"
+                        type="text"
+                        placeholder="Restaurant Name"
+                        value={restaurant}
+                        onChange={e => setRestaurant(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <input className="form-control"
+                        type="text"
+                        placeholder="City"
+                        value={city}
+                        onChange={e => setCity(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <input className="form-control"
+                        type="text"
+                        placeholder="Meal Name"
+                        value={meal}
+                        onChange={e => setMeal(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <textarea
+                        className="form-control"
+                        placeholder="Description"
+                        value={description}
+                        onChange={e => setDescription(e.target.value)}
+                    />
+                </div>
+                <div>
                     <label htmlFor="img">Upload Image!</label>
                     <br />
                     <input onChange={onDrop} type="file" name="img" id="img"></input>
@@ -163,8 +168,9 @@ export default function AddMeal() {
                     <br />
                     <button className="UploadButton" type="submit" onClick={submitMeal}>Upload Meal</button>
                 </div>
-            </div>
-        </>
+
+            </form>
+        </div>
     )
 }
 
