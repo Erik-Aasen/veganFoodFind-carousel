@@ -92,8 +92,9 @@ export default function AddMeal() {
         };
     }
 
-    const submitMeal = () => {
+    const submitMeal = (e) => {
 
+        e.preventDefault();
         axios.post('http://localhost:4000/addmeal', {
             restaurant, city, meal, description, picture
         }, {
@@ -167,7 +168,7 @@ export default function AddMeal() {
                         <button className='btn btn-secondary' onClick={e => { rotatePlus(e) }}>Orientation +</button>
                         <br />
                         <br />
-                        <button className="btn btn-success" type="submit" onClick={submitMeal}>Upload Meal</button>
+                        <button className="btn btn-success" type="submit" onClick={e => {submitMeal(e)}}>Upload Meal</button>
                         <br />
                         <img className='photo' alt='' src={picture} />
                         <br />
