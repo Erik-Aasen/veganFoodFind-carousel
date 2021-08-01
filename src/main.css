@@ -37,9 +37,9 @@
     background-size: cover;
 }
 
-.login {
+/* .login {
     margin: 5px;
-}
+} */
 
 /* .EnterMeal {
     margin: 10px 10px;
@@ -116,6 +116,10 @@ form {
     text-align: center;
 }
 
+.login {
+    text-align: center;
+}
+
 .form-control {
     width: 300px;
 }
@@ -126,4 +130,8 @@ form {
 
 .btn-secondary {
     margin: 0px 10px;
+}
+
+.btn-login {
+    width: 300px;
 }

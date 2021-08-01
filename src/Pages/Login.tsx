@@ -5,7 +5,8 @@ export default function Login() {
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const login = async () => {
+    const login = async (e) => {
+        e.preventDefault();
         await axios.post('http://localhost:4000/login', {
             username,
             password
@@ -31,13 +32,15 @@ export default function Login() {
 
     return (
         <div className="login">
-            <h1>Login</h1>
-            <input className="login" type="text" placeholder="username" value={username} onChange={e => setUsername(e.target.value)} />
-            <br/>
-            <input className="login" type="text" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-            <br/>
-            <button className="login" onClick={login}>Login</button>
-            {/* <button onClick={getUser}>Get User that's logged in</button> */}
+            <form className='form-signin'>
+                <h1>Login</h1>
+                <input className="form-control" type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
+                <br />
+                <input className="form-control" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                <br />
+                <button className="btn btn-login btn-primary" onClick={e => { login(e) }}>Login</button>
+                {/* <button onClick={getUser}>Get User that's logged in</button> */}
+            </form>
         </div>
     )
 }

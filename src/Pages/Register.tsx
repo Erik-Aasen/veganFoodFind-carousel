@@ -10,7 +10,8 @@ export default function Register() {
 
     let history = useHistory();
     
-    const register = () => {
+    const register = (e) => {
+        e.preventDefault();
         axios.post('http://localhost:4000/register', {
             username,
             password
@@ -30,12 +31,15 @@ export default function Register() {
     
     return (
         <div className="login">
-            <h1>Register</h1>
-            <input className="login" type="text" value={username} placeholder="username" onChange={e => setUsername(e.target.value)} />
-            <br/>
-            <input className="login" type="text" value={password} placeholder="password" onChange={e => setPassword(e.target.value)} />
-            <br/>
-            <button className="login" onClick={register}>Register</button>
+            <form className='form-signin'>
+                <h1>Register</h1>
+                <input className="form-control" type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
+                <br />
+                <input className="form-control" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                <br />
+                <button className="btn btn-login btn-primary" onClick={e => {register(e)}}>Register</button>
+                {/* <button onClick={getUser}>Get User that's logged in</button> */}
+            </form>
         </div>
     )
 }
