@@ -12,7 +12,7 @@ export default function MyMeals() {
 
     useEffect(() => {
 
-        Axios.get("http://localhost:4000/mymeals", {
+        Axios.get("http://localhost:4000/usermeals", {
             withCredentials: true
         }).then((res: AxiosResponse) => {
             setPosts(display(res.data));
