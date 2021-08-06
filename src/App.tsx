@@ -23,7 +23,7 @@ function App() {
         {ctx.isAdmin ? (<Route path='/getallusers' exact component={AdminPage}></Route>) : ''}
         <Route path='/profile' exact component={Profile}></Route>
         <Route path='/addmeal' exact component={AddMeal}></Route>
-        <Route path='/mymeals' exact component={MyMeals}></Route>
+        <Route path='/usermeals' exact component={MyMeals}></Route>
         <Route path='/editmeal' exact component={EditMeal}></Route>
       </>
     )
