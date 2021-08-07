@@ -116,7 +116,7 @@ export default function EditMeal(props) {
     return (
         <>
             <div className='add-meal'>
-                <h3>Enter a Meal</h3>
+                <h3>Edit Meal</h3>
                 <form>
                     <div className="form-group">
                         <input className="form-control"
@@ -169,7 +169,7 @@ export default function EditMeal(props) {
                         <button className='btn btn-secondary' onClick={e => { rotatePlus(e) }}>Orientation +</button>
                         <br />
                         <br />
-                        <button className="btn btn-success" type="submit" onClick={e => {submitMeal(e)}}>Upload Meal</button>
+                        <button className="btn btn-success" type="submit" onClick={e => {submitMeal(e)}}>Submit Changes</button>
                         <br />
                         <img className='photo' alt='' src={picture} />
                         <br />
